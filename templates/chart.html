@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Intrusion Detection System </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../static/css/car5.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Topbar Start -->
+     
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
+            <a href="index.html" class="navbar-brand ml-lg-3">
+                <h1 class="m-0 text-uppercase text-primary"> Intrusion Detection</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
+                <div class="navbar-nav mx-auto py-0">
+                   <a href="{{ url_for('index')}}" class="nav-item nav-link active">Home</a>
+                    <a href="{{ url_for('login')}}" class="nav-item nav-link">Login</a>
+					 <a href="{{ url_for('upload')}}" class="nav-item nav-link">Upload</a>
+					  <a href="{{ url_for('prediction')}}" class="nav-item nav-link">Prediction</a>
+					  	  <a href="{{ url_for('performance')}}" class="nav-item nav-link">Performance</a>
+						   <a href="{{ url_for('chart')}}" class="nav-item nav-link">chart</a>
+						  	  <a href="{{ url_for('index')}}" class="nav-item nav-link">Logout</a>
+                </div>
+                
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Header Start -->
+    <div class="jumbotron jumbotron-fluid page-header" style="margin-bottom: 90px;">
+        <div class="container text-center py-5">
+          <h1 class="text-white mt-4 mb-4">Intrusion Detection </h1>
+            <div class="d-inline-flex text-white mb-5">
+                <h1 class="text-white mt-4 mb-4">Performance  </h1>
+            </div>
+            
+        </div>
+    </div>
+    <!-- Header End -->
+
+  
+			    
+    <!-- Contact Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+           <center>  <h1 class="text-black mt-4 mb-4"></h1></center>   
+			  <div class="container pt-5 pb-3">
+            <div class="text-center mb-3 pb-3">
+            
+                <h1>Chart</h1>
+            </div>
+
+  <html>
+  <head>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['class', 'percentage'],
+          ['ipsweep',     15],
+         
+          ['neptune',    35 ],
+		   ['nmap',     15],
+         
+          ['normal',    50 ],
+		   ['other_attacker',     35],
+         
+          ['satan',    15 ],
+		   ['smurf',     15]
+         
+		
+        ]);
+
+        var options = {
+          title: '',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+	  
+    </script>
+  </head>
+  <center><body>
+    
+   
+     <div  style="margin-left:250px"><div id="piechart_3d" style="width: 900px; height: 500px; "></div></div>
+	 
+  </body></center>
+</html>   
+ 
+
+
+        </div>
+			 
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid position-relative overlay-top bg-dark text-white-50 py-5" style="margin-top: 90px;">
+        <div class="container mt-5 pt-5">
+            <div class="row">
+              
+       
+        </div>
+    </div>
+    <div class="container-fluid bg-dark text-white-50 border-top py-4" style="border-color: rgba(256, 256, 256, .1) !important;">
+        <div class="container">
+            
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary rounded-0 btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/lib/easing/easing.min.js"></script>
+    <script src="../static/lib/waypoints/waypoints.min.js"></script>
+    <script src="../static/lib/counterup/counterup.min.js"></script>
+    <script src="../static/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

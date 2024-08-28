@@ -1,0 +1,8 @@
+Intrusion Detection System Using Improved Convolution Neural Network.
+
+Algorithm / Model Used: Decision Tree Classifier.
+
+Training Accuracy: 0.99 and
+Val_accuracy:0.99.
+
+

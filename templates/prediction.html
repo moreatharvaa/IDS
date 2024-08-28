@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Intrusion Detection</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../static/css/car5.css" rel="stylesheet">
+	
+	<style>
+
+
+b {
+  color: #dc3545;
+}
+
+
+</style>
+</head>
+
+<body>
+    <!-- Topbar Start -->
+     
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
+            <a href="index.html" class="navbar-brand ml-lg-3">
+               <h1 class="m-0 text-uppercase text-primary"> Intrusion Detection</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
+                <div class="navbar-nav mx-auto py-0">
+                     <a href="{{ url_for('index')}}" class="nav-item nav-link active">Home</a>
+                    <a href="{{ url_for('login')}}" class="nav-item nav-link">Login</a>
+					 <a href="{{ url_for('upload')}}" class="nav-item nav-link">Upload</a>
+					  <a href="{{ url_for('prediction')}}" class="nav-item nav-link">Prediction</a>
+					  	  <a href="{{ url_for('performance')}}" class="nav-item nav-link">Performance</a>
+                </div>
+                
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Header Start -->
+    <div class="jumbotron jumbotron-fluid page-header" style="margin-bottom: 90px;">
+        <div class="container text-center py-5">
+           <h1 class="text-white mt-4 mb-4">Intrusion Detection  </h1>
+            <div class="d-inline-flex text-white mb-5">
+                <h1 class="text-white mt-4 mb-4">Prediction  </h1>
+            </div>
+            
+        </div>
+    </div>
+    <!-- Header End -->
+
+   
+			    
+    <!-- Contact Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+             <center>  <h1 class="text-black mt-4 mb-4">Prediction</h1></center> 
+			 
+			     
+				 	<div class="row">
+    			
+  
+	 
+       
+            <center><form  action="{{ url_for('predict')}}"  method="POST"> </center>
+
+
+                <div class="span5">
+                    <div class="control-group">
+                         <div class="col-md-12 col-sm-12 col-xs-12" style="margin-left:80px;">
+                        <center><label class="control-label" for="inputMessage"><b></b></label></br></center>
+                      
+                  <div class="controls">
+			 
+                    <center><b>PROTOCOL_TYPE:</b>    <select   type="text"  name="protocol_type" required="required" placeholder="style" width="300" style="width: 300px"></center>
+                             <option value="1">tcp</option>
+                         <option value="2">udp</option>
+                        <option value="3">icmp</option>
+                     </select>  &nbsp;&nbsp;&nbsp;&nbsp;
+				 
+                    </div> 
+</br>
+                  <div class="controls">
+			 
+                    <center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>FLAG:</b>    <select   type="text"  name="flag" required="required" placeholder="style" width="300" style="width: 300px"></center>
+                             <option value="1">SF</option>
+                         <option value="2">S0</option>
+                         <option value="3">REJ</option>
+                         <option value="4">RSTR</option>
+						   <option value="5">SH</option>
+                         <option value="6">RSTO</option>
+						   <option value="7">S1</option>
+                         <option value="8">RSTOS0</option>
+						   <option value="9">S3</option>
+                         <option value="10">S2</option>
+						   <option value="11">OTH</option>
+                        
+                     </select>  
+				 
+                    </div> 
+</br>
+                    <div class="controls">
+                     
+              <center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b> SRC_BYTES: </b> <input type="text" name="src_bytes" placeholder="src_bytes" required="required" width="300" style="width: 300px"/></center>
+                 
+                  </div>
+                   
+
+
+                </br>
+                <div class="controls">
+                 
+          <center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <b> DST_BYTES: </b> <input type="text" name="dst_bytes" placeholder="dst_bytes" required="required" width="300" style="width: 300px"/></center>
+             
+              </div>
+              
+            </br>
+            <div class="controls">
+             
+      <center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> HOT: </b> <input type="text" name="hot" placeholder="hot" required="required" width="300" style="width: 300px"/></center>
+         
+          </div>
+          
+        </br>
+        <div class="controls">
+         
+  <center> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<<b> COUNT: </b> <input type="text" name="count" placeholder="count" required="required" width="300" style="width: 300px"/></center>
+     
+      </div>
+  
+    </br>
+    <div class="controls">
+     
+<center>&nbsp;&nbsp;&nbsp;&nbsp;   <b> SRV_COUNT: </b> <input type="text" name="srv_count" placeholder="srv_count" required="required" width="300" style="width: 300px"/></center>
+ 
+  </div>
+ 
+</br>
+<div class="controls">
+ 
+<center>&nbsp; <b> SAME_SRV_RATE: </b> <input type="text" name="same_srv_rate" placeholder="same_srv_rate" required="required" width="300" style="width: 300px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </center>
+
+</div>
+ 
+</br>
+<div class="controls">
+ 
+<center> <b> DST_HOST_COUNT: </b> <input type="text" name="dst_host_count" placeholder="dst_host_count" required="required" width="300" style="width: 300px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </center>
+
+</div>
+ 
+</br>
+<div class="controls">
+ 
+<center>   <b> DST_HOST_SRV_COUNT: </b> <input type="text" name="dst_host_srv_count" placeholder="dst_host_srv_count" required="required" width="300" style="width: 300px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </center>
+
+</div>
+ 
+</br>
+<div class="controls">
+ 
+<center><b> DST_HOST_SAME_SRV_RATE: </b> <input type="text" name="dst_host_same_srv_rate" placeholder="dst_host_same_srv_rate" required="required" width="300" style="width: 300px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</center>
+
+</div>
+</br>
+
+<div class="controls">
+ 
+<center> <b> DST_HOST_DIFF_SRV_RATE: </b> <input type="text" name="dst_host_diff_srv_rate" placeholder="dst_host_diff_srv_rate" required="required" width="300" style="width: 300px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</center>
+
+</div>
+</br>
+<div class="controls">
+ 
+<center> <b> DST_HOST_SAME_SRC_PORT_RATE: </b> <input type="text" name="dst_host_same_src_port_rate" placeholder="dst_host_same_src_port_rate" required="required" width="300" style="width: 300px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</center>
+
+</div>
+</br>
+<div class="controls">
+ 
+<center>  <b> DST_HOST_RERROR_RATE: </b> <input type="text" name="dst_host_rerror_rate" placeholder="dst_host_rerror_rate" required="required" width="300" style="width: 300px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</center>
+
+</div>
+
+                   
+
+
+</br>
+<center>  <button type="submit" class="btn btn-primary">Predict </button></center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</form>
+
+
+
+
+
+<center><h1> Prediction is : {{ prediction_text }} </h1></center>
+
+
+
+                        </div>
+                        </div>
+
+
+
+
+</div>
+                
+                
+              
+
+				
+          </div>
+				 
+				 
+				 
+    </div>
+    <!-- Contact End -->
+   </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid position-relative overlay-top bg-dark text-white-50 py-5" style="margin-top: 90px;">
+        <div class="container mt-5 pt-5">
+            <div class="row">
+              
+       
+ 
+        </div>
+    </div>
+    <div class="container-fluid bg-dark text-white-50 border-top py-4" style="border-color: rgba(256, 256, 256, .1) !important;">
+        <div class="container">
+            
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary rounded-0 btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/lib/easing/easing.min.js"></script>
+    <script src="../static/lib/waypoints/waypoints.min.js"></script>
+    <script src="../static/lib/counterup/counterup.min.js"></script>
+    <script src="../static/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
